@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+@media screen and (max-width:640px) {
+	.sidebar { overflow:hidden; clear:both; border-bottom:4px solid #d6d6d6; }
+		.sidebar .side  { padding:0; }
+		.sidebar .clock { display:none; }
+		.sidebar .btn   { display:none; }
+		.sidebar .side-menu { color:#565656; margin-top:0px; }
+        .sidebar .side-menu ul { list-style:none; margin:0; padding:0; }
+		.sidebar .side-menu ul ul { display:none; margin-top:10px; }
+		.sidebar .side-menu .active ul { display:block; }
+        .sidebar .side-menu li { padding:8px 0; padding-left:30px; }
+		.sidebar .side-menu li a { text-decoration:none; }
+		.sidebar .side-bottom { display:none; }
+		.sidebar hr { display:none; }
+
+	.main { top:50px; margin:5px; padding:0; width:100%; text-align:center; }
+    .main h1.title { margin:0; }
+      .main form.form-login { margin:0 auto; width:320px; }
+      .main form.form-login .info { text-align:left; margin:5px; }
+      .main input.form-input-text { box-shadow:none; margin:0 0 5px 0; width:300px; }
+      .main button.btn-login { width:312px; }
+}

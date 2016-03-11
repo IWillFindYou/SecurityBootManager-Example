@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Security Booting LogViewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no">
+
+    <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700' rel='stylesheet' type='text/css' />
+    <link href='./css/common.css' rel='stylesheet' type='text/css' />
+    <link href='./css/pc.css' rel='stylesheet' type='text/css' />
+    <link href='./css/phone.css' rel='stylesheet' type='text/css' />
+    <script type="text/javascript" src="./js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="sidebar">
+        <div class="side side-center clock">
+          <div class="row-md-4"></div>
+          <div class="row-md-4">
+            <span class="time time-0"></span>
+            <span class="time time-0"></span>
+            <span class="time time-slide"></span>
+            <span class="time time-0"></span>
+            <span class="time time-0"></span>
+          </div>
+          <div class="row-md-2"></div>
+        </div>
+        <div class="side side-center">
+          <button type="button" class="btn btn-login btn-long-orange" data-href="regist.html">Sign Up</button>
+        </div>
+        <div class="side side-center">
+          <button type="button" class="btn btn-login btn-long-orange" data-href="">Sign Out</button>
+        </div>
+        <div class="side side-left side-menu">
+          <ul>
+            <li class="">
+              <span class="icon-user-profile"></span> <a href="viewLog.html">로그관리</a>
+              <ul>
+                <li>+ <a href="viewLog.html">로그조회</a></li>
+              </ul>
+            </li>
+            <li class="">
+              <span class="icon-product"></span> <a href="modify.html">회원관리</a>
+              <ul>
+                <li>+ <a href="modify.html">정보수정</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!--<hr class="line-gray" /> -->
+        </div>
+      </nav>
+      <div class="main">
+        <h1 class="title">Sign Up</h1>
+        <form class="form-login" action="#" method="post">
+          <span style="display:inline-block; width:80px">아이디</span><input type="text" class="form-input-text" name="userID" value="" placeholder="" /><br><br>
+          <span style="display:inline-block; width:80px">비밀번호</span><input type="password" class="form-input-text" name="userOrder" value="" placeholder="" /><br><br>
+          <span style="display:inline-block; width:80px">Mac Address</span><input type="text" class="form-input-text" name="userMac" value="" placeholder="XX:XX:XX:XX:XX:XX" /><br><br>
+		  <button type="submit" class="btn btn-login">Commit</button>
+         
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
