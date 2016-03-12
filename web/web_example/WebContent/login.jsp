@@ -61,7 +61,7 @@
 		--> </nav>
 		<div class="main">
 			<h1 class="title">User Login</h1>
-			<form class="form-login" action="processLogin.jsp" method="post">
+			<form class="form-login" action="Login.do" method="post">
 				<input type="text" class="form-input-text" name="userId" value=""
 					placeholder="아이디" /> <input type="password"
 					class="form-input-text" name="userPwd" value="" placeholder="비밀번호" />

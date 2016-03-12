@@ -5,7 +5,21 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>Security Booting LogViewer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no">
+
+<style type="text/css">
+#error {
+	color: red;
+}
+</style>
+<%
+	//request스코프에 담긴 오류메시지 얻어오기.
+	String errMsg = (String) request.getAttribute("errMsg");
+	if (errMsg == null) {
+		errMsg = "";
+	}
+%>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no">
 
     <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700' rel='stylesheet' type='text/css' />
     <link href='./css/common.css' rel='stylesheet' type='text/css' />
@@ -66,7 +80,9 @@
       </nav>
       <div class="main">
         <h1 class="title">Modify</h1>
-        <form class="form-login" action="processModify.jsp" method="post">
+        <form class="form-login" action="Modify.do" method="post">
+        <% if (!(errMsg.equals("") || errMsg == null)) %>
+						<div id ="error"><%=errMsg %></div><br><br>
 		<span style="display:inline-block; width:80px">아이디</span><input type="text" class="form-input-text readyonly" name="userId" value="" placeholder=""  disabled="disabled" /><br><br>
           <span style="display:inline-block; width:80px">비밀번호</span><input type="password" class="form-input-text" name="userPwd" value="" placeholder="" /><br><br>
           <span style="display:inline-block; width:80px">Mac Address</span><input type="text" class="form-input-text" name="userMac" value="" placeholder="XX:XX:XX:XX:XX:XX" /><br><br>

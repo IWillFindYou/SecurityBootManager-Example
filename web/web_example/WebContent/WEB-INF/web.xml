@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>web_example</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <resource-ref>
+    <description>DB Connction</description>
+    <res-ref-name>jdbc/mysql</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <servlet>
+    <description>로그인 사용자와 암호 인증 처리</description>
+    <display-name>login process</display-name>
+    <servlet-name>login process</servlet-name>
+    <servlet-class>controller.UserLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>login process</servlet-name>
+    <url-pattern>/Login.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>사용자 등록</description>
+    <display-name>regist process</display-name>
+    <servlet-name>regist process</servlet-name>
+    <servlet-class>controller.UserRegist</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>regist process</servlet-name>
+    <url-pattern>/Regist.do</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <description>사용자 정보 수정</description>
+    <display-name>modify process</display-name>
+    <servlet-name>modify process</servlet-name>
+    <servlet-class>controller.UserModify</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>modify process</servlet-name>
+    <url-pattern>/Modify.do</url-pattern>
+  </servlet-mapping>
+</web-app>
