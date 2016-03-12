@@ -64,6 +64,19 @@
         </div>
 		-->
       </nav>
+      
+  	  <%@ page
+			import="java.util.ArrayList, model.database.LogEntity, java.text.SimpleDateFormat"%>
+		<jsp:useBean id="logdb" class="model.database.LogDHCP" scope="page" />
+		<%
+			//로그 배열리스트를 자바빈즈를 이용하여 얻는다.
+			ArrayList<LogEntity> list = logdb.getLogList();
+			int counter = list.size();
+			int row = 0;
+
+			if (counter > 0) {
+		%>
+      
       <div class="main">
         <h1 class="title">User's Logs</h1>
         
@@ -81,31 +94,31 @@
 				</th>
 			</tr>
 		
+			<%
+				//게시 등록일을 2010-3-15 10:33:21 형태로 출력하기 위한 클래스 
+					SimpleDateFormat df = new SimpleDateFormat(
+							"yyyy-MM-dd HH:mm:ss");
+					for (LogEntity log : list) {
+			%>
 		
 			<tr>
 				<td>
-					1
+					<%=log.getId() %>
 				</td>
 				<td>
-					2016.3.2 15:00
+					<%=log.getRegdate() %>
 				</td>
 				<td>
-					210.118.75.13
+					<%=log.getIp() %>
 				</td>
 			</tr>
-			<tr>
-				<td>
-					2
-				</td>
-				<td>
-					2016.3.3 15:00
-				</td>
-				<td>
-					210.118.75.14
-				</td>
-			</tr>
+			<%
+				}
+			%>
 		</table>
-		
+		<%
+			}
+		%>
 		
       </div>
     </div>

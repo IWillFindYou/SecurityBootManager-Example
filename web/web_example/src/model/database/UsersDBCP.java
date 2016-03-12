@@ -35,7 +35,7 @@ public class UsersDBCP extends DBCP
 		}
 	}
 	
-	// 게시판의 모든 레코드를 반환 메서드
+	// 사용자의 모든 레코드를 반환 메서드
 	public ArrayList<UserEntity> getUserList() {	
 		connect();
 		ArrayList<UserEntity> list = new ArrayList<UserEntity>();
@@ -87,7 +87,7 @@ public class UsersDBCP extends DBCP
 		return user;
 	}
 
-	// 게시물 등록 메서드
+	// 데이터 등록 메서드
 	public boolean insertDB(UserEntity user) {
 		boolean success = false; 
 		connect();
@@ -133,7 +133,7 @@ public class UsersDBCP extends DBCP
 		return success;
 	}
 	
-	// 게시물 삭제를 위한 메서드
+	// 데이터 수정을 위한 메서드
 	public boolean deleteDB(String id) {
 		boolean success = false; 
 		connect();		
