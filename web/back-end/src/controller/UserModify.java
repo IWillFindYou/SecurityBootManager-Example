@@ -20,17 +20,17 @@ import model.database.UsersDBCP;
 public class UserModify extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+	/**
+	* @see HttpServlet#HttpServlet()
+	*/
     public UserModify() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	* @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	*/
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
@@ -46,7 +46,7 @@ public class UserModify extends HttpServlet {
 		if(u_dbcp.updateDB(user)) {
 			RequestDispatcher rd = request.getRequestDispatcher("viewLog.jsp");
 			rd.forward(request, response);
-		}else {
+		} else {
 			request.setAttribute("errMsg", "수정을 실패 했습니다.");
 			RequestDispatcher rd = request.getRequestDispatcher("modify.jsp");
 			rd.forward(request, response);
@@ -54,8 +54,8 @@ public class UserModify extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	* @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	*/
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

@@ -21,16 +21,16 @@ public class UserRegist extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
-     * @see HttpServlet#HttpServlet()
-     */
+	* @see HttpServlet#HttpServlet()
+	*/
     public UserRegist() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	* @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	*/
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String id = request.getParameter("userId");
@@ -43,7 +43,7 @@ public class UserRegist extends HttpServlet {
 			request.setAttribute("errMsg", "같은 아이디가 존재합니다.");
 			RequestDispatcher rd = request.getRequestDispatcher("regist.jsp");
 			rd.forward(request, response);
-		}else{
+		} else{
 			UserEntity user = new UserEntity();
 			user.setId(id);
 			user.setPwd(pwd);
@@ -52,7 +52,7 @@ public class UserRegist extends HttpServlet {
 				HttpSession session = request.getSession();
 				session.setAttribute("userId", id);
 				response.sendRedirect("viewLog.jsp");
-			}else{
+			} else{
 				request.setAttribute("errMsg", "사용자 등록에 실패했습니다.");
 				RequestDispatcher rd = request.getRequestDispatcher("regist.jsp");
 				rd.forward(request, response);
@@ -61,8 +61,8 @@ public class UserRegist extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	* @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	*/
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
