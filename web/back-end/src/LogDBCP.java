@@ -48,6 +48,8 @@ public class LogDBCP extends DBCP
 				log.setId ( rs.getInt("ID") );
 				log.setRegdate(rs.getTimestamp("REGDATE"));
 				log.setIp ( rs.getString("IP") );
+				log.setApSSID ( rs.getString("APSSID") );
+				log.setApMAC ( rs.getString("APMAC") );
 				//리스트에 추가
 				list.add(log);
 			}
@@ -61,13 +63,15 @@ public class LogDBCP extends DBCP
 		return list;
 	}
 	
-	public boolean insertDB(String ip) {
+	public boolean insertDB(String remoteIP, String apSSID, String apMAC) {
 		boolean success = false; 
 		connect();
-		String sql ="insert into logs values(0, sysdate(), ?)";		
+		String sql ="insert into logs values(0, sysdate(), ?, ?, ?)";
 		try {
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, ip);
+			pstmt.setString(1, remoteIP);
+			pstmt.setString(2, apSSID);
+			pstmt.setString(3, apMAC);
 			pstmt.executeUpdate();
 			success = true; 
 		} catch (SQLException e) {

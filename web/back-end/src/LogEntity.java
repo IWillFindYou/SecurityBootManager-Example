@@ -6,6 +6,8 @@ public class LogEntity {
 	private int id;
 	private Date regdate;
 	private String ip;
+	private String apSSID;
+	private String apMAC;
 	
 	public int getId() {
 		return id;
@@ -25,5 +27,16 @@ public class LogEntity {
 	public void setIp(String ip) {
 		this.ip = ip;
 	}
-		
+	public String getApSSID() {
+		return apSSID;
+	}
+	public void setApSSID(String apSSID) {
+		this.apSSID = apSSID;
+	}
+	public String getApMAC() {
+		return apMAC;
+	}
+	public void setApMAC(String apMAC) {
+		this.apMAC = apMAC;
+	}	
 }
