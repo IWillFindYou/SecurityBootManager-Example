@@ -14,9 +14,9 @@ public:
     void          setDevice(Device* dev) { this->mDev = dev; }
     void          setGroups(multimap< string, vector<Device> >* groups) { this->mGroups = groups; }
 
-    virtual int   parser(char* buff, int size) { }
-    virtual char* encode(int* size) { }
-    virtual int   execute() { }
+    virtual int   parser(char* buff, int size) { return 0; }
+    virtual char* encode(int* size) { return NULL; }
+    virtual int   execute() { return 0; }
 };
 
 #endif
